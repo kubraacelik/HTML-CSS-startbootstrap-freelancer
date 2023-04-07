@@ -13,12 +13,7 @@ body {
   line-height: 1.5;
   background-color: #fff;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4,h5,h6 {
   font-weight: 700;
   font-family: "Montserrat", sans-serif;
 }
@@ -27,6 +22,41 @@ a {
 }
 ul {
   list-style-type: none;
+}
+section{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+.btn{
+  margin-top: 2rem;
+  font-size: 2rem;
+  font-weight: 400;
+  display: inline;
+  border: 2px solid #fff;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: all .5s;
+}
+.btn-outline{
+  color: #fff;
+  border-color: #fff;
+  background-color: transparent;
+  padding: 2.2rem 1.6rem;
+}
+.btn-outline:hover{
+  background-color: #fff;
+  color: #212529;
+}
+.btn-primary{
+  background-color: #128F76;
+  border-color: #128F76;
+  padding: 1.2rem 1rem;
+  color: #fff;
+}
+.btn-primary:hover{
+  background-color: #18BC9C;
+  border-color: #18BC9C;
 }
 .img-fluid {
   max-width: 256px;
@@ -40,7 +70,8 @@ nav {
   color: #fff;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  position: fixed;
+  position: fixed; /*menü üstte sabit*/
+  z-index: 500; 
 }
 .clearfix::after {
   content: "";
@@ -101,22 +132,107 @@ header h2{
   font-family: "Lato";
   font-weight: 300;
 }
-.star-light {
+hr.star-light{
+  border-color: #fff;
+}
+hr.star-dark{
+  border-color: #2C3E50;
+}
+.star-light, .star-dark{
   border: none;
-  border-top: 0.4rem solid #fff;
+  border-top: 0.4rem solid;
   border-radius: 10px;
   max-width: 25rem;
   margin: 2.5rem auto; /*çizginin ortaya gelmesi için*/
   overflow: visible; /*yıldız üste çıkınca görünsün*/
   height: 0; /*çizginin yanları düzelsin*/
 }
-.star-light::after { /*yıldızın gelmesi için*/
+.star-light::after{
+  color:#fff;
+  background-color: #1abc9c;
+}
+.star-dark::after{
+  color: #2C3E50;
+  background-color: #fff;
+
+}
+.star-light::after, .star-dark::after { /*yıldızın gelmesi için*/
   content: "\2605";
-  color: #fff;
   font-weight: 900;
   font-size: 3.2rem;
   position: relative; /*üste çıkabilsin*/
   top: -28px;
   padding: 0 8px; /*yanları boş kalsın*/
+}
+/*Portfolio*/
+#portfolio{
+  
+}
+#portfolio h2{
+  font-size: 4.8rem;
+  color: #2C3E50;
+}
+.img-fluid-p{
+  max-width: 100%;
+  height: auto;
+}
+.col{
+  float: left;
+  width: 33.333%;
+  padding: 10px;
+}
+.portfolio-item{
+ position: relative; /*resme gelince üstüne resim ekleneceği için relative olmalı*/
+}
+.portfolio-item img{
+  display: block;
+  border-radius: 13px;
+}
+.img-overlay{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
   background-color: #1abc9c;
+  opacity: 0; /*görünürlüğü*/
+  transition: opacity 0.4s;
+}
+.img-overlay .icon{
+  color: #fff;
+  font-size: 8rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); /*ortalandı*/
+}
+.portfolio-item:hover .img-overlay{
+  opacity: 0.8;
+  border-radius: 13px;
+}
+/*About*/
+#about{
+  background-color: #1ABC9C;
+  color: #fff;
+}
+#about h2{
+  font-size: 4.8rem;
+}
+#about-text{
+  text-align: left;
+}
+#about-text .left{
+  float: left;
+  width: 50%;
+  padding-right: 2rem;
+  padding-left: 23rem;
+}
+#about-text .right{
+  float: right;
+  width: 50%;
+  padding-left: 2rem;
+  padding-right: 23rem;
+}
+#about-text .text{
+  font-size: 2rem;
 }
