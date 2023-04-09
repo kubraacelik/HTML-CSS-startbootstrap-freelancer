@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 10px;
+  font-size: 6px;
 }
 body {
   font-family: "Lato", sans-serif;
@@ -28,9 +28,12 @@ section{
   padding-bottom: 10rem;
   text-align: center;
 }
+.btn-large{
+  font-size: 2rem; 
+  padding: 2.2rem 1.6rem;
+}
 .btn{
   margin-top: 2rem;
-  font-size: 2rem;
   font-weight: 400;
   display: inline;
   border: 2px solid #fff;
@@ -38,11 +41,17 @@ section{
   cursor: pointer;
   transition: all .5s;
 }
+.btn-social{
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 2rem;
+}
 .btn-outline{
   color: #fff;
   border-color: #fff;
   background-color: transparent;
-  padding: 2.2rem 1.6rem;
 }
 .btn-outline:hover{
   background-color: #fff;
@@ -79,11 +88,55 @@ nav {
   clear: both;
 }
 .container {
-  width: 1140px;
+  width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+.col{
+  float: left;
+  width: 100%;
+  padding: 1rem;
+}
+@media (min-width:576px) {
+  .container{
+    max-width: 540px;
+  }
+  html{
+    font-size: 7px;
+  }
+
+}
+@media (min-width:768px) {
+  .container{
+    max-width: 720px;
+  }
+  html{
+    font-size: 8px;
+  }
+  .col{
+    width: 50%;
+  }
+}
+@media (min-width:992px) {
+  .container{
+    max-width: 960px;
+  }
+  html{
+    font-size: 9px;
+  }
+  .col{
+    width: 33.333%;
+  }
+}
+@media (min-width:1200px) {
+  .container{
+    max-width: 1140px;
+  }
+  html{
+    font-size: 10px;
+  }
 }
 #logo-box {
   float: left;
@@ -116,6 +169,38 @@ nav {
 #nav-links .nav-link:hover {
   color: #1abc9c;
 }
+#nav-links .nav-icon{
+  display: none; /*bars ilk başta görünmez olmalı*/
+}
+@media (max-width:992px){
+  #logo-box{
+    float: none;
+    text-align: left;
+  }
+  #nav-links{
+    float: none;
+  }
+  #nav-links .nav-link{
+    font-size: 2rem;
+    padding-left: 0;
+  }
+  #nav-links .nav-item{
+    float: none;
+    text-align: left;
+  }
+  #nav-links .nav-icon{
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    font-size: 3rem;
+  }
+  #nav-links.responsive li:not(:first-child)/*responsive class'ı var ise li'lerin içindeki 1.eleman haricindekiler*/
+  {
+    display: none;
+  }
+}
+/*Header*/
 header {
   background-color: #1abc9c;
   height: 700px;
@@ -176,11 +261,7 @@ hr.star-dark{
   max-width: 100%;
   height: auto;
 }
-.col{
-  float: left;
-  width: 33.333%;
-  padding: 10px;
-}
+
 .portfolio-item{
  position: relative; /*resme gelince üstüne resim ekleneceği için relative olmalı*/
 }
@@ -222,17 +303,84 @@ hr.star-dark{
   text-align: left;
 }
 #about-text .left{
-  float: left;
-  width: 50%;
-  padding-right: 2rem;
-  padding-left: 23rem;
+  float: none;
+  width: 100%;
+  padding-right: 5px;
+  padding-left: 25px;
 }
 #about-text .right{
-  float: right;
-  width: 50%;
-  padding-left: 2rem;
-  padding-right: 23rem;
+  float: none;
+  width: 100%;
+  padding-left: 25px;
+  padding-right: 5px;
 }
 #about-text .text{
   font-size: 2rem;
+}
+@media (min-width:992px){
+  #about-text .left{
+    float: left;
+    width: 50%;
+    padding-right: 10px;
+    padding-left: 210px;
+  }
+  #about-text .right{
+    float: right;
+    width: 50%;
+    padding-right: 210px;
+    padding-left: 10px;
+  }
+}
+/*Contact*/
+#contact h2{
+  font-size: 4.8rem;
+  color: #2C3E50;
+}
+#contact-form{
+  width: 70%;
+  margin: 0 auto;
+  text-align: left;
+}
+.form-group{
+  border-bottom: 1px solid #e9cefe;
+  padding-bottom: 3rem;
+  margin-bottom: 4rem;
+}
+.form-group input, .form-group textarea{
+  border: none;
+  width: 100%;
+  display: block;
+  font-size: 2.4rem;
+}
+.form-group input:focus{ /*input'un etrafındaki çizgiyi kaldırdık*/
+  outline: 0;
+}
+.form-group textarea:focus{ 
+  outline: 0;
+}
+/*Footer*/
+footer{
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: #2C3E50;
+  color: #fff;
+  text-align: center;
+}
+footer h4{
+  font-size: 2.4rem;
+}
+footer p{
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+footer li{
+  display: inline-block;
+  margin-right: 1rem;
+}
+.copyright{
+  background-color: #1A252F;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  color: #fff;
+  text-align: center;
 }
